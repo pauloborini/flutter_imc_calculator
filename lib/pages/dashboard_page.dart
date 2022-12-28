@@ -41,8 +41,11 @@ class _DashboardPageState extends State<DashboardPage> {
       _imc = imcData.weight / (imcData.height * imcData.height);
       _calculating = true;
 
-      if (_imc < 18.5) {
-        _imcText = 'MAGREZA';
+      if (_imc < 17) {
+        _imcText = 'MUITO ABAIXO DO PESO';
+        _textColor = Colors.blue;
+      } else if (_imc >= 17 && _imc < 18.5) {
+        _imcText = 'ABAIXO DO PESO';
         _textColor = Colors.green;
       } else if (_imc >= 18.5 && _imc < 25.9) {
         _imcText = "SAUDÁVEL";
@@ -262,24 +265,30 @@ class _DashboardPageState extends State<DashboardPage> {
                         ranges: <GaugeRange>[
                           GaugeRange(
                               startValue: 0,
-                              endValue: 18.5,
+                              endValue: 17.00,
+                              color: Colors.lightBlue,
+                              startWidth: 50,
+                              endWidth: 50),
+                          GaugeRange(
+                              startValue: 17.00,
+                              endValue: 18.50,
                               color: Colors.green,
                               startWidth: 50,
                               endWidth: 50),
                           GaugeRange(
-                              startValue: 18.5,
-                              endValue: 25.9,
+                              startValue: 18.50,
+                              endValue: 24.99,
                               color: Colors.greenAccent,
                               startWidth: 50,
                               endWidth: 50),
                           GaugeRange(
-                              startValue: 25.9,
-                              endValue: 29.9,
+                              startValue: 24.99,
+                              endValue: 29.99,
                               color: Colors.yellow,
                               startWidth: 50,
                               endWidth: 50),
                           GaugeRange(
-                              startValue: 29.9,
+                              startValue: 29.99,
                               endValue: 40,
                               color: Colors.red,
                               startWidth: 50,
@@ -291,7 +300,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             markerType: MarkerType.triangle,
                             markerHeight: 30,
                             markerWidth: 30,
-                            markerOffset: 40,
+                            markerOffset: 45,
                             color: stanColor,
                           )
                         ],
