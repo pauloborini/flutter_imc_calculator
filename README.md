@@ -24,7 +24,7 @@ Ao abrir o projeto executar o "Pub get" no arquivo pubspec.yaml e depois rodar n
 <h3 align="left">Features</h3>
 <div align="center">
 
-https://user-images.githubusercontent.com/86570695/209849491-6883f94e-96ed-4de4-949f-f16370427789.mp4
+https://user-images.githubusercontent.com/86570695/209857702-c753394b-dc71-474c-9f72-1798c06f33d0.mp4
 
 
 </div>
